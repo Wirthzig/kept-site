@@ -213,17 +213,6 @@ p.body { font-size: clamp(18px, 1.6vw, 21px); color: rgba(255,255,255,.75); max-
 .keeper li { padding: 16px 0; border-bottom: 1px solid var(--hairline); font-size: 16px; color: var(--ink2); }
 .keeper li b { color: #fff; font-weight: 600; }
 
-/* Home's action cards (ActionCard.swift): soft dark grey gradient, hairline edge. */
-.home { padding: 0 0 150px; }
-.home h2 { max-width: 12em; }
-.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
-.action { border-radius: var(--r-action); padding: 18px 18px 22px; min-height: 210px; display: flex; flex-direction: column; gap: 10px;
-  background: linear-gradient(150deg, var(--card-top), var(--card-bottom)); box-shadow: inset 0 0 0 1px var(--hairline); }
-.action .disc { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.1); margin-bottom: 6px; }
-.action .disc svg { width: 20px; height: 20px; }
-.action h3 { font: 600 19px/1.2 var(--sfd); letter-spacing: -.02em; margin: 0; }
-.action p { margin: 0; font-size: 15px; color: var(--ink2); }
-
 .price { padding: 120px 0 110px; text-align: center; border-top: 1px solid var(--hairline); }
 .price h2 { font-size: clamp(44px, 7vw, 100px); line-height: .98; letter-spacing: -.05em; margin: 0 auto 28px; max-width: 13em; }
 .price p { font-size: clamp(19px, 1.8vw, 24px); color: var(--ink2); margin: 0 auto; max-width: 28em; }
@@ -243,9 +232,6 @@ p.body { font-size: clamp(18px, 1.6vw, 21px); color: rgba(255,255,255,.75); max-
 footer { color: var(--ink2); font-size: 13px; padding: 0 0 48px; }
 footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
 
-@media (max-width: 1000px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 960px) {
   .hero-in { grid-template-columns: minmax(0, 1fr); gap: 44px; padding-top: 64px; }
   .demo { justify-self: center; }
@@ -255,8 +241,6 @@ footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display
   .roll::after { background: linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.62) 45%, rgba(0,0,0,.85) 100%); }
 }
 @media (max-width: 520px) {
-  .cards { grid-template-columns: 1fr; }
-  .action { min-height: 0; }
   .keeper { padding: 110px 0; }
   .still .row img { width: 60px; height: 60px; }
 }
@@ -279,7 +263,8 @@ footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display
         <h1>Nothing goes until you say so.</h1>
         <p class="lede">Kept is a calmer way to clear your iPhone camera roll. Swipe through it like a deck of cards. Everything you let go waits in a tray until you confirm.</p>
         <div class="ctas">
-          <span class="fine">Coming to iPhone in 2027. Free for your first 500 photos.</span>
+          <a class="btn glass prime" href="https://apps.apple.com/app/id6823303164">Download on the App Store</a>
+          <span class="fine">Free for your first 500 photos.</span>
         </div>
       </div>
 
@@ -393,31 +378,81 @@ footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display
     </div>
   </section>
 
-  <section class="home wrap" aria-labelledby="t7">
-    <h2 id="t7">Your whole library, a little at a time.</h2>
-    <p class="body">Pick a month, an album, a trip or everything. Kept remembers where you stopped.</p>
-    <div class="cards">
-      <article class="action">
-        <span class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
-        <h3>Challenges</h3>
-        <p>Screenshot Purge, Burst Buster, Blurry Sweep, big videos. One kind of clutter at a time.</p>
-      </article>
-      <article class="action">
-        <span class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="12" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4h10.5A2.5 2.5 0 0 1 21 6.5V16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-        <h3>Look-alikes</h3>
-        <p>Similar shots side by side. Pick the ones worth keeping; the rest go to the tray.</p>
-      </article>
-      <article class="action">
-        <span class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 1.6 2.7-.1.8 2.6 2.2 1.6-.9 2.6.9 2.6-2.2 1.6-.8 2.6-2.7-.1L12 21l-2.2-1.6-2.7.1-.8-2.6-2.2-1.6.9-2.6-.9-2.6 2.2-1.6.8-2.6 2.7.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.8 12.2l2.2 2.2 4.2-4.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Milestones</h3>
-        <p>A badge for every goal you reach, from your first 100 photos reviewed.</p>
-      </article>
-      <article class="action">
-        <span class="disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z M9 4v13.5M15 6.5V20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
-        <h3>Travel map</h3>
-        <p>Your trips, found from where your photos were taken, as one route across the map.</p>
-      </article>
+  <section class="chapter" aria-labelledby="c1">
+    <div class="wrap chapter-in">
+      <div class="chapter-text">
+        <h2 id="c1">Look-alikes, side by side.</h2>
+        <p class="body">Kept looks through your whole library on your iPhone and groups bursts, retakes and exact duplicates. See every shot at once, star the best one and keep only what you want.</p>
+      </div>
+      <div class="mock alike glass" aria-hidden="true">
+        <div class="mock-head"><b>4 similar</b><small>June 2025</small></div>
+        <div class="alike-grid">
+          <figure class="keep"><img src="img/d65.jpg" alt="" loading="lazy" style="object-position:50% 50%;transform:scale(1);"><span class="mark glass prime"><svg viewBox="0 0 14 14"><path d="M2.5 7.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="best glass"><svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="currentColor"/></svg></span></figure>
+          <figure class="toss"><img src="img/d65.jpg" alt="" loading="lazy" style="object-position:58% 40%;transform:scale(1.06);filter:blur(1.6px);"><span class="mark glass"><svg viewBox="0 0 24 24"><path d="M12 3v9m-3.5-3.5L12 12l3.5-3.5M4 14h4l1.5 2.5h5L16 14h4v4.5A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5V14z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></figure>
+          <figure class="toss"><img src="img/d65.jpg" alt="" loading="lazy" style="object-position:44% 56%;transform:scale(1.12);"><span class="mark glass"><svg viewBox="0 0 24 24"><path d="M12 3v9m-3.5-3.5L12 12l3.5-3.5M4 14h4l1.5 2.5h5L16 14h4v4.5A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5V14z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></figure>
+          <figure class="toss"><img src="img/d65.jpg" alt="" loading="lazy" style="object-position:62% 46%;transform:scale(1.18);filter:blur(0.8px);"><span class="mark glass"><svg viewBox="0 0 24 24"><path d="M12 3v9m-3.5-3.5L12 12l3.5-3.5M4 14h4l1.5 2.5h5L16 14h4v4.5A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5V14z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></figure>
+        </div>
+        <div class="btn glass prime">Keep 1, tray 3</div>
+      </div>
     </div>
+  </section>
+
+  <section class="chapter flip" aria-labelledby="c2">
+    <div class="wrap chapter-in">
+      <div class="chapter-text">
+        <h2 id="c2">Nine challenges for five spare minutes.</h2>
+        <p class="body">Each one clears a single kind of clutter, from screenshots to blurry shots to videos over 100&nbsp;MB, biggest first. Challenges never close. When new photos arrive, they come back.</p>
+      </div>
+      <div class="covers" aria-hidden="true"><figure><img src="img/w65.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Look-Alikes</figcaption></figure><figure><img src="img/w22.jpg" alt="" loading="lazy" style="filter:blur(2px)"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Blurry Sweep</figcaption></figure><figure><img src="img/w103.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Receipts and Documents</figcaption></figure><figure><img src="img/w63.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Screenshot Purge</figcaption></figure><figure><img src="img/w174.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Screen Recordings</figcaption></figure><figure><img src="img/w129.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Burst Buster</figcaption></figure><figure><img src="img/w177.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Big Videos</figcaption></figure><figure><img src="img/w49.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Video Sweep</figcaption></figure><figure><img src="img/w152.jpg" alt="" loading="lazy"><span class="play glass"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span><figcaption>Selfie Sweep</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section class="chapter" aria-labelledby="c3">
+    <div class="wrap chapter-in">
+      <div class="chapter-text">
+        <h2 id="c3">Shorten it instead of deleting it.</h2>
+        <p class="body">Videos play right on the card. When only a part is worth keeping, trim it. Photos keeps the original, so you can always revert. Live Photos play their moment too.</p>
+      </div>
+      <div class="mock trim glass" aria-hidden="true">
+        <div class="trim-frame"><img src="img/d177.jpg" alt="" loading="lazy"></div>
+        <div class="strip"><img src="img/d177.jpg" alt="" style="object-position:0% 50%"><img src="img/d177.jpg" alt="" style="object-position:12% 50%"><img src="img/d177.jpg" alt="" style="object-position:24% 50%"><img src="img/d177.jpg" alt="" style="object-position:36% 50%"><img src="img/d177.jpg" alt="" style="object-position:48% 50%"><img src="img/d177.jpg" alt="" style="object-position:60% 50%"><img src="img/d177.jpg" alt="" style="object-position:72% 50%"><img src="img/d177.jpg" alt="" style="object-position:84% 50%"><img src="img/d177.jpg" alt="" style="object-position:96% 50%"><span class="window"><i></i><i></i></span></div>
+        <p class="trim-line">Keeps 0:15 of 0:41</p>
+        <div class="btn glass prime">Save shortened video</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter flip" aria-labelledby="c4">
+    <div class="wrap chapter-in">
+      <div class="chapter-text">
+        <h2 id="c4">Your trips, found and named.</h2>
+        <p class="body">Kept finds your trips from when and where your photos were taken, so you can go through a whole holiday at once. A travel map draws your journey, and a year recap you can share shows where you went.</p>
+      </div>
+      <div class="mock map" aria-hidden="true">
+        <svg class="route" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 8 66 C 14 66, 20 62, 26 58 S 36 34, 42 30 S 58 50, 64 48 S 78 22, 84 22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        <span class="home-dot" style="left:8%;top:66%">Home</span>
+        <span class="pin" style="left:26%;top:58%"><img src="img/w46.jpg" alt=""><b>1</b></span><span class="pin" style="left:42%;top:30%"><img src="img/w85.jpg" alt=""><b>2</b></span><span class="pin" style="left:64%;top:48%"><img src="img/w191.jpg" alt=""><b>3</b></span><span class="pin" style="left:84%;top:22%"><img src="img/w176.jpg" alt=""><b>4</b></span>
+        <div class="trip glass"><b>Lisbon and Porto</b><small>12 to 17 Sep, 1,720 km from home</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="all wrap" aria-labelledby="t7">
+    <h2 id="t7">And everything else.</h2>
+    <ul>
+      <li><b>Zoom before you decide</b>Pinch or double tap, up to 5x.</li>
+      <li><b>Decide later</b>Hold a photo and it waits at the end of the round.</li>
+      <li><b>Undo</b>Every swipe can be taken back.</li>
+      <li><b>Months and albums</b>Pick a month, an album, Favourites, Portraits or Panoramas.</li>
+      <li><b>Remembers where you stopped</b>Each review shows how much is left.</li>
+      <li><b>How similar is similar</b>A slider sets how strict look-alikes are.</li>
+      <li><b>Rediscovered</b>Each review ends with three photos worth seeing again.</li>
+      <li><b>Space freed</b>An estimate after every confirm.</li>
+      <li><b>Milestones and streaks</b>A badge for every goal. Turn the notes off for a quiet mode.</li>
+      <li><b>Year recap</b>Your trips, countries and farthest distance on one card to share.</li>
+      <li><b>Place names</b>From Apple Maps, and you can turn them off.</li>
+      <li><b>English and German</b>In the language of your iPhone.</li>
+    </ul>
   </section>
 
   <section class="price" aria-labelledby="t4">
@@ -440,7 +475,7 @@ footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display
 
 <footer>
   <div class="wrap">
-    <span>Kept is in development, and details may change before launch. Photos from Unsplash.</span>
+    <span>Photos from Unsplash.</span>
     <span><a href="privacy.html">Privacy</a> &nbsp; <a href="imprint.html">Imprint</a></span>
   </div>
 </footer>
@@ -726,7 +761,7 @@ const splashDone = new Promise((resolve) => {
       <feBlend in="r" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="b" mode="screen"/>`;
     defs.appendChild(f); el.style.setProperty("--lens", `url(#${id})`); el.classList.add("refract");
   }
-  const targets = ".counter, .tray, .controls .circle, .chrome-row .circle, .link, .pair figcaption";
+  const targets = ".counter, .tray, .controls .circle, .chrome-row .circle, .link, .pair figcaption, .alike-grid .mark, .alike-grid .best, .covers .play, .trip";
   const apply = () => document.querySelectorAll(targets).forEach(lens);
   if (chromium && !lowTrans) {
     splashDone.then(apply);
