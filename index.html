@@ -213,6 +213,70 @@ p.body { font-size: clamp(18px, 1.6vw, 21px); color: rgba(255,255,255,.75); max-
 .keeper li { padding: 16px 0; border-bottom: 1px solid var(--hairline); font-size: 16px; color: var(--ink2); }
 .keeper li b { color: #fff; font-weight: 600; }
 
+/* ---------- Feature chapters: the app's own views, rebuilt like the demo ---------- */
+.chapter { padding: 0 0 150px; }
+.chapter-in { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; }
+.chapter.flip .chapter-text { order: 2; }
+.chapter h2 { font-size: clamp(36px, 4.6vw, 64px); }
+.chapter p.body { margin: 0; }
+.mock { border-radius: var(--r-sheet); padding: 20px; width: min(440px, 100%); justify-self: center; }
+.mock-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.mock-head b { font: 700 22px/1.15 var(--sfd); letter-spacing: -.025em; }
+.mock-head small { font-size: 14px; color: var(--ink2); }
+.mock .btn { width: 100%; pointer-events: none; }
+
+.alike-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.alike-grid figure { position: relative; margin: 0; border-radius: var(--r-thumb); overflow: hidden; aspect-ratio: 3/4; }
+.alike-grid img { width: 100%; height: 100%; object-fit: cover; }
+.alike-grid .toss img { filter: brightness(.7); }
+.alike-grid .mark, .alike-grid .best { position: absolute; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; }
+.alike-grid .mark { right: 8px; bottom: 8px; }
+.alike-grid .best { left: 8px; top: 8px; }
+.alike-grid .mark svg, .alike-grid .best svg { width: 15px; height: 15px; }
+
+.covers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.covers figure { position: relative; margin: 0; }
+.covers img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--r-action); filter: brightness(.5); }
+.covers .play { position: absolute; left: 50%; top: calc(50% - 14px); width: 40px; height: 40px; margin: -20px; border-radius: 50%; display: grid; place-items: center; }
+.covers .play svg { width: 15px; height: 15px; margin-left: 2px; }
+.covers figcaption { font-size: 14px; font-weight: 600; letter-spacing: -.01em; margin-top: 8px; line-height: 1.25; }
+
+.trim-frame { border-radius: var(--r-thumb); overflow: hidden; aspect-ratio: 4/3; margin-bottom: 14px; }
+.trim-frame img { width: 100%; height: 100%; object-fit: cover; }
+.strip { position: relative; display: flex; height: 48px; border-radius: 10px; overflow: hidden; isolation: isolate; }
+.strip img { flex: 1; min-width: 0; height: 100%; object-fit: cover; filter: brightness(.45); }
+.window { position: absolute; top: 0; bottom: 0; left: 24%; width: 38%; border: 3px solid #fff; border-inline-width: 12px; border-radius: 10px; background: rgba(255,255,255,.28); mix-blend-mode: normal; }
+.window i { position: absolute; top: 50%; width: 3px; height: 16px; margin-top: -8px; border-radius: 2px; background: #000; }
+.window i:first-child { left: -8px; }
+.window i:last-child { right: -8px; }
+.trim-line { text-align: center; font-size: 14px; color: var(--ink2); margin: 12px 0 14px; font-variant-numeric: tabular-nums; }
+
+.map { position: relative; aspect-ratio: 9/7; padding: 0; overflow: hidden; background: radial-gradient(120% 90% at 30% 20%, #2a2a2c, #161617 70%); box-shadow: inset 0 0 0 1px var(--hairline); }
+.map .route { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(255,255,255,.55); }
+.pin { position: absolute; width: 46px; height: 46px; margin: -23px; border-radius: 50%; box-shadow: 0 0 0 2.5px #fff, 0 6px 18px rgba(0,0,0,.5); }
+.pin img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.pin b { position: absolute; right: -6px; top: -6px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; background: #fff; color: #000; font: 700 12px/20px var(--sf); text-align: center; }
+.home-dot { position: absolute; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--ink2); transform: translate(-6px, -6px); }
+.home-dot::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: #fff; }
+.trip { position: absolute; left: 14px; right: 14px; bottom: 14px; border-radius: var(--r-tray); padding: 14px 16px; }
+.trip b { display: block; font: 700 17px/1.2 var(--sfd); letter-spacing: -.02em; }
+.trip small { font-size: 13px; color: var(--ink2); }
+
+.all { padding: 0 0 150px; }
+.all ul { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; border-top: 1px solid var(--hairline); }
+.all li { padding: 18px 0; border-bottom: 1px solid var(--hairline); font-size: 16px; color: var(--ink2); }
+.all li b { display: block; color: #fff; font-weight: 600; font-size: 17px; margin-bottom: 2px; }
+@media (max-width: 960px) {
+  .chapter-in { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .chapter.flip .chapter-text { order: 0; }
+  .all ul { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .chapter { padding-bottom: 110px; }
+  .all ul { grid-template-columns: 1fr; }
+  .covers figcaption { font-size: 12px; }
+}
+
 .price { padding: 120px 0 110px; text-align: center; border-top: 1px solid var(--hairline); }
 .price h2 { font-size: clamp(44px, 7vw, 100px); line-height: .98; letter-spacing: -.05em; margin: 0 auto 28px; max-width: 13em; }
 .price p { font-size: clamp(19px, 1.8vw, 24px); color: var(--ink2); margin: 0 auto; max-width: 28em; }
@@ -260,7 +324,7 @@ footer .wrap { border-top: 1px solid var(--hairline); padding-top: 22px; display
     <div class="wrap hero-in">
       <div>
         <div class="brand"><img src="img/icon.png" alt="">Kept</div>
-        <h1>Nothing goes until you say so.</h1>
+        <h1>Your new way to organize your photos.</h1>
         <p class="lede">Kept is a calmer way to clear your iPhone camera roll. Swipe through it like a deck of cards. Everything you let go waits in a tray until you confirm.</p>
         <div class="ctas">
           <a class="btn glass prime" href="https://apps.apple.com/app/id6823303164">Download on the App Store</a>
