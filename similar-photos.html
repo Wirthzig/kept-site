@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to delete duplicate and similar photos on iPhone</title>
+<meta name="description" content="Merge exact duplicates with the Duplicates collection in Photos, then pick the best of your bursts and retakes. Step by step, nothing deleted by accident.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wirthzig.github.io/kept-site/similar-photos.html">
+<meta property="og:title" content="How to delete duplicate and similar photos on iPhone">
+<meta property="og:description" content="Merge duplicates in Photos, then pick the best of your bursts and retakes. Step by step.">
+<meta property="og:image" content="https://wirthzig.github.io/kept-site/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "How to delete duplicate and similar photos on iPhone", "datePublished": "2026-11-08", "dateModified": "2026-11-08", "author": {"@type": "Person", "name": "Alexander Wirths"}, "publisher": {"@type": "Organization", "name": "Norn"}, "image": "https://wirthzig.github.io/kept-site/img/og.png", "mainEntityOfPage": "https://wirthzig.github.io/kept-site/similar-photos.html"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a deleted photo back?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes. Photos you delete go to Recently Deleted in Photos (Collections, Utilities). Apple's iCloud Photos page says you can recover them there for 30 days, and after that they are deleted permanently."}}, {"@type": "Question", "name": "Does deleting free up iCloud storage?", "acceptedAnswer": {"@type": "Answer", "text": "If iCloud Photos is on, yes. Apple puts it plainly: when you delete photos on one device, \"they're deleted everywhere that you use iCloud Photos\" (Apple's iCloud Photos page). If iCloud Photos is off, deleting only frees space on the iPhone itself."}}, {"@type": "Question", "name": "Is Merge the same as deleting?", "acceptedAnswer": {"@type": "Answer", "text": "Merge combines a set of duplicates in Photos into one. It's Apple's tool for copies. For similar shots that aren't copies, you choose which to keep yourself, by hand or with an app like Kept."}}]}]</script>
+<link rel="apple-touch-icon" href="img/icon.png">
+<style>
+/* Tokens: the same as index.html (the app's Palette, Spacing and Radius). */
+:root {
+  --canvas: #000; --ink: #fff; --ink2: rgba(255,255,255,.62); --hairline: rgba(255,255,255,.12);
+  --r-card: 28px; --r-sheet: 34px;
+  --sf: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Inter, Arial, sans-serif;
+  --sfd: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Inter, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: var(--canvas); }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 18px/1.6 var(--sf); letter-spacing: -.012em; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 6px; }
+.col { width: min(680px, 100% - 40px); margin-inline: auto; }
+header.top { padding: 28px 0 0; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font: 600 20px/1 var(--sfd); letter-spacing: .02em; text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 9px; box-shadow: 0 0 0 1px var(--hairline); }
+h1 { font: 700 clamp(38px, 6vw, 58px)/1.02 var(--sfd); letter-spacing: -.04em; margin: 64px 0 22px; text-wrap: balance; }
+.lede { font-size: 21px; line-height: 1.5; color: rgba(255,255,255,.78); margin: 0 0 12px; }
+.meta { font-size: 14px; color: var(--ink2); margin: 0 0 48px; }
+h2 { font: 700 30px/1.15 var(--sfd); letter-spacing: -.03em; margin: 64px 0 16px; }
+p { margin: 0 0 18px; color: rgba(255,255,255,.82); }
+ol { margin: 0 0 22px; padding-left: 1.3em; color: rgba(255,255,255,.82); }
+ol li { margin-bottom: 8px; padding-left: 4px; }
+b { color: #fff; font-weight: 600; }
+.answer { margin: 0 0 8px; padding: 22px 24px; border-radius: var(--r-card); background: linear-gradient(150deg, #2C2C2E, #141415); box-shadow: inset 0 0 0 1px var(--hairline); }
+.answer p:last-child { margin: 0; }
+figure { margin: 34px 0; display: grid; place-items: center; }
+figure img { width: min(320px, 80%); height: auto; border-radius: 40px; box-shadow: 0 0 0 2px rgba(255,255,255,.12), 0 30px 80px rgba(0,0,0,.7); }
+figcaption { margin-top: 14px; font-size: 14px; color: var(--ink2); text-align: center; max-width: 30em; }
+.cta { display: inline-flex; align-items: center; height: 52px; padding: 0 26px; border-radius: 999px; background: #fff; color: #000; font-weight: 600; font-size: 17px; text-decoration: none; margin: 8px 0 0; }
+details { border-top: 1px solid var(--hairline); }
+details:last-of-type { border-bottom: 1px solid var(--hairline); }
+summary { list-style: none; cursor: pointer; padding: 20px 0; font-weight: 600; font-size: 18px; color: #fff; }
+summary::-webkit-details-marker { display: none; }
+details p { margin: 0 0 20px; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+.toc a { font-size: 14px; padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,.08); text-decoration: none; color: rgba(255,255,255,.82); }
+h2 { scroll-margin-top: 24px; }
+footer { color: var(--ink2); font-size: 13px; padding: 72px 0 48px; }
+footer .col { border-top: 1px solid var(--hairline); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+</style>
+</head>
+<body>
+<header class="top"><div class="col"><a class="brand" href="./"><img src="img/icon.png" alt="">Kept</a></div></header>
+
+<main class="col"><article>
+  <h1>How to delete duplicate and similar photos on iPhone</h1>
+  <p class="lede">There are two kinds of doubles in a camera roll. Copies of the same photo, and shots that are almost the same, like a burst or three tries at one moment. Photos handles the first kind for you. The second kind needs a choice.</p>
+  <p class="meta">By Alexander Wirths, who makes Kept under the Norn label in Frankfurt, so the Kept sections are about his own app. <time datetime="2026-11-08">November 8, 2026</time>.</p>
+  <p>This guide is for iPhone owners who want fewer copies and near-copies in their camera roll. It covers the Photos app and Kept on iPhone, not Mac or other phones.</p>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#merge">Merge duplicates with Photos</a>
+    <a href="#similar">Pick the best of similar shots</a>
+    <a href="#kept">With Kept</a>
+    <a href="#lessons">What I learned</a>
+    <a href="#questions">Questions</a>
+  </nav>
+
+  <div class="answer">
+    <p><b>Short answer.</b> Open Photos, tap Collections, then Utilities, then Duplicates, and tap Merge on each set. For similar shots that aren't duplicates, compare them side by side, keep the best one and delete the rest. Deleted photos go to Recently Deleted, where they are usually recoverable for up to 30 days.</p>
+  </div>
+
+  <h2 id="merge">1. Merge duplicates with Photos</h2>
+  <p>Photos collects the photos and videos it sees as duplicates in its own collection. Apple's steps, from the <a href="https://support.apple.com/guide/iphone/find-and-delete-duplicates-iph1978d9c23/ios">iPhone User Guide</a>:</p>
+  <ol>
+    <li>Open the Photos app.</li>
+    <li>Tap <b>Collections</b>.</li>
+    <li>Tap <b>Utilities</b>, then <b>Duplicates</b>.</li>
+    <li>Tap <b>Merge</b> on a set, then <b>Merge [number] Items</b>.</li>
+  </ol>
+  <p>If the Duplicates collection isn't there, Photos hasn't found any duplicates in your library.</p>
+
+  <h2 id="similar">2. Pick the best of similar shots</h2>
+  <p>Bursts, retakes and a few seconds of the same scene differ a little from shot to shot, so Photos may not count them as duplicates. Here you have to decide which one to keep. In Photos you can do that by hand: open the photos one after the other, favourite the one you like, and delete the others.</p>
+  <p>It goes faster when the similar photos sit next to each other. That's the part Kept does.</p>
+
+  <h2 id="kept">3. With Kept, side by side and nothing deleted yet</h2>
+  <p>Kept looks through your whole library on your iPhone and groups look-alikes: bursts, retakes and duplicates. Open a group and you see every shot at once. Kept stars the one it suggests as the best shot. You choose what to keep, and the rest go to a tray.</p>
+  <figure>
+    <img src="img/guide-alike.jpg" alt="Kept showing four similar photos in a grid, the best one starred and selected, with the button Keep 1, tray 3" loading="lazy" width="644" height="1400">
+    <figcaption>Four similar photos side by side. The starred one is kept, three go to the tray.</figcaption>
+  </figure>
+  <p>The star is a suggestion based on sharpness, exposure and Apple's own photo quality score, so look before you agree. Nothing is deleted while you choose. When you're sure, open the tray and confirm once, and iOS asks you again. Before a look-alike is removed, Keeper Check makes sure the photo you kept instead is still there.</p>
+  <figure>
+    <img src="img/guide-tray.jpg" alt="Kept's tray with five photos and the button Confirm 5, with the note Nothing has been deleted yet" loading="lazy" width="644" height="1400">
+    <figcaption>The tray. Photos leave only after one confirm.</figcaption>
+  </figure>
+  <p>Kept is free for your first 500 deleted photos, then $5.99 once. Everything runs on your iPhone, with no account and no upload.</p>
+  <a class="cta" href="https://apps.apple.com/app/id6823303164">Download Kept on the App Store</a>
+
+  <h2 id="lessons">What I learned building the look-alike part</h2>
+  <p>I tested Kept on my own camera roll, 14,747 photos. Three things were harder than they look.</p>
+  <ol>
+    <li><b>Groups that chain.</b> The first version put A and C in one group because A looked like B and B looked like C, so very different photos ended up together. Now every pair in a group has to be alike on its own, and the closest pairs join first.</li>
+    <li><b>Where "similar" stops.</b> I marked pairs of my own photos as "same moment" or "different" and set the cut-off from those marks. A slider in Kept's Settings moves it if you want stricter or looser groups.</li>
+    <li><b>Hidden burst frames.</b> iOS shows a burst as one photo. Kept has to ask for every frame on purpose, otherwise the extra frames are invisible and a clean-up quietly skips them.</li>
+  </ol>
+
+  <h2>In short</h2>
+  <p>Use Merge in Photos for duplicates. For bursts and retakes, put them side by side, keep the best one and let the rest go, either by hand or with Kept. Whatever you delete waits in Recently Deleted for 30 days.</p>
+
+  <h2 id="questions">Questions</h2>
+  <details><summary>Can I get a deleted photo back?</summary><p>Usually, yes. Photos you delete go to Recently Deleted in Photos (Collections, Utilities). <a href="https://support.apple.com/en-us/108782">Apple's iCloud Photos page</a> says you can recover them there for 30 days, and after that they are deleted permanently.</p></details>
+  <details><summary>Does deleting free up iCloud storage?</summary><p>If iCloud Photos is on, yes. Apple puts it plainly: when you delete photos on one device, "they're deleted everywhere that you use iCloud Photos" (<a href="https://support.apple.com/en-us/108782">Apple's iCloud Photos page</a>). If iCloud Photos is off, deleting only frees space on the iPhone itself.</p></details>
+  <details><summary>Is Merge the same as deleting?</summary><p>Merge combines a set of duplicates in Photos into one. It's Apple's tool for copies. For similar shots that aren't copies, you choose which to keep yourself, by hand or with an app like Kept.</p></details>
+</article></main>
+
+<footer>
+  <div class="col">
+    <span>Found a mistake? Write to <a href="mailto:norn.optimization@gmail.com">norn.optimization@gmail.com</a>, corrections are dated on this page.</span>
+    <span><a href="./">Kept</a> &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="imprint.html">Imprint</a></span>
+  </div>
+</footer>
+</body>
+</html>
